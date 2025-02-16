@@ -27,13 +27,13 @@ public class Controller {
         try {
 
             Connection connection = ConexionDB.obtenerConexion();
-            InputStream inputStream = getClass().getResourceAsStream("ClienteklsReport.jrxml");
+            InputStream inputStream = getClass().getResourceAsStream("ClientesReport.jrxml");
 
             JasperReport jasperReport = JasperCompileManager.compileReport(inputStream);
             JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, null, connection);
             JasperViewer.viewReport(jasperPrint, false);
         } catch (JRException e) {
-            System.err.println("El archivo ClientesReport.jrxml no fue encontrado");        }
+            System.err.println("El archivo no fue encontrado");        }
 
     }
 
