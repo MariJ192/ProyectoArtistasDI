@@ -1,0 +1,27 @@
+.button {
+    -fx-background-color: #72a8ce;
+    -fx-text-fill: #000000;
+    -fx-font-size: 14px;
+    -fx-font-family: Consolas;
+    -fx-border-radius: 5px;
+    -fx-padding: 5px 15px;
+    -fx-cursor: hand;
+}
+
+#lblTitulo{
+    -fx-font-family: Consolas;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+}
+.root{
+    -fx-font-family: Consolas;
+    -fx-background-image: url("notas.jpg");
+
+}
+
+#lblListArtist{
+    -fx-font-family: Consolas;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+
+}
