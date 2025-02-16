@@ -28,6 +28,7 @@ public class InformeArtistas {
     public Button btnGenerarInforme;
 
     public void listarArtistas() {
+        //Mostramos la lista de artista que tenemos en la base de datos
         ObservableList<String> artistas = FXCollections.observableArrayList();
         try {
             Connection conectar = ConexionDB.obtenerConexion();
@@ -48,6 +49,7 @@ public class InformeArtistas {
     }
 
     public void generarinformeArtista() {
+        //Generamos el informe del artista seleccionado
         String artista = artistasList.getSelectionModel().getSelectedItem();
 
 
@@ -72,12 +74,13 @@ public class InformeArtistas {
             JasperViewer.viewReport(jasperPrint, false);
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("Error al generar informe artista" + e.getMessage());
         }
     }
 
 
     public void btnCerrar(ActionEvent event) {
+        //Cerramos la ventana
         Stage titStage = (Stage) ((Node) (event.getSource())).getScene().getWindow();
         titStage.close();
     }

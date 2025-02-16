@@ -24,6 +24,7 @@ public class Controller {
     public Button btnCerrar;
 
     public void btnCrearInfCliente(ActionEvent actionEvent) {
+        //Cuando le damos al boton de generar informe de cliente automáticamente nos genera el informe
         try {
 
             Connection connection = ConexionDB.obtenerConexion();
@@ -38,6 +39,7 @@ public class Controller {
     }
 
     public void btnCrearInfArtista(ActionEvent actionEvent) {
+        //Cuando le damos al boton de generar informe de artistas, se abre otra ventana donde nos lista los artistas
         FXMLLoader loader = new FXMLLoader(Controller.class.getResource("InformeArtistasView.fxml"));
         try {
             Scene scene = new Scene(loader.load());
@@ -50,7 +52,7 @@ public class Controller {
 
             stage.showAndWait();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("No se pudo abrir el archivo");
         }
 
     }
@@ -60,11 +62,11 @@ public class Controller {
         alert.setTitle("Confirmación de salida");
         alert.setHeaderText("¿Está seguro de que desea salir?");
 
-        // Mostrar la alerta y esperar la respuesta
+        // Mostramos la alerta y esperamos la respuesta
         ButtonType respuesta = alert.showAndWait().orElse(ButtonType.CANCEL);
 
         if (respuesta == ButtonType.OK) {
-            // Si el usuario confirma la salida, cerrar la aplicación
+            // Si el usuario confirma la salida, cerramos la aplicación
             System.exit(0);
         }
     }
